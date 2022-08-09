@@ -16,11 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="DzC-ce-Cik">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask Group 3-1" translatesAutoresizingMaskIntoConstraints="NO" id="EBE-zg-xfq">
                                 <rect key="frame" x="18" y="63" width="393" height="408"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JRh-V0-MNE">
-                                <rect key="frame" x="16" y="770" width="394" height="81"/>
+                                <rect key="frame" x="16" y="796" width="394" height="81"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1V-eV-EMh">
                                         <rect key="frame" x="0.0" y="0.0" width="197" height="81"/>
@@ -48,7 +52,7 @@
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.086274509799999996" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="NkK-QY-gXh">
-                                <rect key="frame" x="47" y="551" width="334" height="174.33333333333337"/>
+                                <rect key="frame" x="47" y="571" width="334" height="174.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Discover Your Dream Job Here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCh-eh-im1">
                                         <rect key="frame" x="7" y="0.0" width="320" height="102.66666666666667"/>
@@ -74,10 +78,15 @@
                             <constraint firstItem="EBE-zg-xfq" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.481132" id="Ds2-hP-wL4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JRh-V0-MNE" secondAttribute="trailing" constant="18" id="ERs-zz-THQ"/>
                             <constraint firstAttribute="trailing" secondItem="NkK-QY-gXh" secondAttribute="trailing" constant="47" id="MSz-lY-Q0p"/>
+                            <constraint firstItem="DzC-ce-Cik" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="TC8-qC-ABi"/>
+                            <constraint firstItem="DzC-ce-Cik" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Wkg-Ks-4X5"/>
+                            <constraint firstItem="DzC-ce-Cik" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yca-bh-GgS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DzC-ce-Cik" secondAttribute="trailing" id="by8-6p-M6o"/>
                             <constraint firstItem="EBE-zg-xfq" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.918224" id="dCF-Il-mDs"/>
-                            <constraint firstItem="NkK-QY-gXh" firstAttribute="top" secondItem="EBE-zg-xfq" secondAttribute="bottom" constant="80" id="mD4-wW-h8I"/>
+                            <constraint firstItem="DzC-ce-Cik" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kLD-gK-67w"/>
+                            <constraint firstItem="NkK-QY-gXh" firstAttribute="top" secondItem="EBE-zg-xfq" secondAttribute="bottom" constant="100" id="mD4-wW-h8I"/>
                             <constraint firstItem="JRh-V0-MNE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ngr-hT-scT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JRh-V0-MNE" secondAttribute="bottom" constant="41" id="o4P-eB-H1S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JRh-V0-MNE" secondAttribute="bottom" constant="15" id="o4P-eB-H1S"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -87,6 +96,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Mask Group 2" width="428" height="926"/>
         <image name="Mask Group 3-1" width="393" height="408"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
