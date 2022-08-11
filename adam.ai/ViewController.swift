@@ -9,9 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var signUpBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        signUpBtn.roundCorners([.allCorners],radius: 20)
+        loginBtn.roundCorners([.topRight,.bottomRight], radius: 20)
+        
     }
 
 

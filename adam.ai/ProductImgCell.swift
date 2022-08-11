@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ProductImg: UICollectionViewCell {
-    
-    @IBOutlet weak var ProductImg: UIImageView!
+class ProductImgCell: UICollectionViewCell {
+    @IBOutlet weak var dltBtn: UIButton!
+    @IBOutlet weak var productImg: UIImageView!
+//    func prepareCell(productImg:UIImage){
+//        productImg.image = productImg
+//    }
 }
