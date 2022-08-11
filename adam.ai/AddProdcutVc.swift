@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import PhotosUI
 class AddProdcutVc: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -44,7 +44,9 @@ class AddProdcutVc: UIViewController {
 
 }
 
-extension AddProdcutVc: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension AddProdcutVc: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPickerViewControllerDelegate{
+   
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -53,22 +55,53 @@ extension AddProdcutVc: UICollectionViewDelegate,UICollectionViewDataSource,UICo
         return imgsArr.count + 1
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:ProductImgCell
-        if(indexPath.row < imgsArr.count){
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell" , for: indexPath) as! ProductImgCell
-            cell.productImg.image = UIImage(systemName: "square.and.arrow.up")!
-            cell.contentView.backgroundColor = UIColor.red
-//            cell.dltBtn.roundCorners([.allCorners], radius: 12.5)
-            
-        }else{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell" , for: indexPath) as! ProductImgCell
         
+        if(indexPath.row < imgsArr.count){
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell" , for: indexPath) as! ProductImgCell
+            cell.productImg.image = imgsArr[indexPath.row]
+            cell.productImg.roundCorners([.allCorners], radius: 10)
+            cell.dltBtn.roundCorners([.allCorners], radius: 12.5)
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "plusCell" , for: indexPath) as! AddPhotoCell
+            cell.plusImg.roundCorners([.allCorners], radius:10)
+           return cell
         }
-        cell.productImg.roundCorners([.allCorners], radius: 10)
-        cell.dltBtn.roundCorners([.allCorners], radius: 12.5)
-        return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 91, height: 91)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row >= imgsArr.count{
+            getPhotos()
+        }
+    }
+    func getPhotos(){
+        print(11111)
+        var config = PHPickerConfiguration()
+        config.filter = .images
+        config.selectionLimit = 3
+        let picker = PHPickerViewController(configuration: config)
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true, completion: nil)
+        for res in results {
+            res.itemProvider.loadObject(ofClass: UIImage.self, completionHandler:{
+                (image,error) in
+                if let img = image as? UIImage{
+                    DispatchQueue.main.async {
+                        print(img)
+                        self.imgsArr.append(img)
+                        self.collectionView.reloadData()
+                    }
+                }
+            })
+        }
     }
 }
