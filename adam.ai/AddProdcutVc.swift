@@ -7,6 +7,7 @@
 
 import UIKit
 import PhotosUI
+import RealmSwift
 class AddProdcutVc: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,8 +20,8 @@ class AddProdcutVc: UIViewController {
     @IBOutlet weak var textField4: UITextField!
     @IBOutlet weak var textField5: UITextField!
     @IBOutlet weak var doneBtn: UIButton!
-    var imgsArr:[UIImage] = [UIImage(systemName: "square.and.arrow.up")!]
-    
+    var productsArr:[Prodcuts] = []
+    var imgsDataArr:[Data] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor.clear
@@ -39,12 +40,30 @@ class AddProdcutVc: UIViewController {
         textField3.placeholderPadding( paddingSize: 22)
         textField4.placeholderPadding( paddingSize: 22)
         textField5.placeholderPadding( paddingSize: 22)
+//        let categScreen = storyboard?.instantiateViewController(identifier: "categsScreenID") as! categsVc
+//        categScreen.productsArr = productsArr
+//        print("add prod screen = \(productsArr[0].name)")
+//        print(productsArr)
     }
-  
 
+    @IBAction func doneBtnPressed(_ sender: Any) {
+        let product = Prodcuts()
+        product.image = imgsDataArr[0]
+        product.name = textField1.text ?? "No name"
+        product.price = textField5.text ?? "0.0"
+        let realm = try! Realm()
+        try! realm.write{
+            realm.add(product)
+            print("prod added successfully")
+        }
+        
+    }
+    
+
+    
 }
 
-extension AddProdcutVc: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPickerViewControllerDelegate{
+extension AddProdcutVc: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -52,13 +71,13 @@ extension AddProdcutVc: UICollectionViewDelegate,UICollectionViewDataSource,UICo
     }
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imgsArr.count + 1
+        return imgsDataArr.count + 1
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if(indexPath.row < imgsArr.count){
+        if(indexPath.row < imgsDataArr.count){
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell" , for: indexPath) as! ProductImgCell
-            cell.productImg.image = imgsArr[indexPath.row]
+            cell.productImg.image = UIImage(data: imgsDataArr[indexPath.row])
             cell.productImg.roundCorners([.allCorners], radius: 10)
             cell.dltBtn.roundCorners([.allCorners], radius: 12.5)
             return cell
@@ -75,15 +94,19 @@ extension AddProdcutVc: UICollectionViewDelegate,UICollectionViewDataSource,UICo
         return 5
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row >= imgsArr.count{
+        if indexPath.row >= imgsDataArr.count{
             getPhotos()
         }
     }
-    func getPhotos(){
-        print(11111)
+ 
+}
+
+extension AddProdcutVc: PHPickerViewControllerDelegate {
+    func getPhotos() {
+        
         var config = PHPickerConfiguration()
         config.filter = .images
-        config.selectionLimit = 3
+        config.selectionLimit = 2
         let picker = PHPickerViewController(configuration: config)
         picker.delegate = self
         present(picker, animated: true, completion: nil)
@@ -96,12 +119,15 @@ extension AddProdcutVc: UICollectionViewDelegate,UICollectionViewDataSource,UICo
                 (image,error) in
                 if let img = image as? UIImage{
                     DispatchQueue.main.async {
-                        print(img)
-                        self.imgsArr.append(img)
+                        self.imgsDataArr.append(img.pngData()!)
                         self.collectionView.reloadData()
                     }
                 }
             })
         }
+        
     }
+    
+
 }
+

@@ -13,4 +13,7 @@ class ProductImgCell: UICollectionViewCell {
 //    func prepareCell(productImg:UIImage){
 //        productImg.image = productImg
 //    }
+    @IBAction func deleteBtnClk(_ sender: Any) {
+        
+    }
 }
