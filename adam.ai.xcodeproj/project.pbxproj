@@ -71,6 +71,38 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BAEB0BCC28ADCD5200BAF814 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA45235928AC9FA800CFAA25 /* Products.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAEB0BCD28ADCD6000BAF814 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAFBCE4228A20BB1008F8E19 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAEB0BCE28ADCD6700BAF814 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAFBCE4028A20BB1008F8E19 /* ViewController.swift */,
+				BA11FC0B28A37C0B0042C192 /* AddProdcutVc.swift */,
+				BA09D06928A4B85F00E698D6 /* LoginVc.swift */,
+				BA0BBA3A28A56C550065F799 /* categsVc.swift */,
+				BA11FC0928A37BD40042C192 /* ProductImgCell.swift */,
+				BA0BBA3828A55C8F0065F799 /* AddPhotoCell.swift */,
+				BA0BBA3C28A56C9C0065F799 /* categsNamesCell.swift */,
+				BA6B676928ACA66800BEB012 /* FilterNamesCell.swift */,
+				BA6B676B28ACB26100BEB012 /* ProductCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		BAFBCE3028A20BB1008F8E19 = {
 			isa = PBXGroup;
 			children = (
@@ -92,23 +124,15 @@
 		BAFBCE3B28A20BB1008F8E19 /* adam.ai */ = {
 			isa = PBXGroup;
 			children = (
+				BAEB0BCE28ADCD6700BAF814 /* Controller */,
+				BAEB0BCD28ADCD6000BAF814 /* View */,
+				BAEB0BCC28ADCD5200BAF814 /* Model */,
 				BAFBCE3C28A20BB1008F8E19 /* AppDelegate.swift */,
 				BAFBCE3E28A20BB1008F8E19 /* SceneDelegate.swift */,
-				BAFBCE4028A20BB1008F8E19 /* ViewController.swift */,
-				BAFBCE4228A20BB1008F8E19 /* Main.storyboard */,
 				BAFBCE4528A20BB2008F8E19 /* Assets.xcassets */,
 				BAFBCE4728A20BB2008F8E19 /* LaunchScreen.storyboard */,
 				BAFBCE4A28A20BB2008F8E19 /* Info.plist */,
-				BA11FC0B28A37C0B0042C192 /* AddProdcutVc.swift */,
-				BA11FC0928A37BD40042C192 /* ProductImgCell.swift */,
 				BADAA86B28A4A56500ACF61A /* UiView+borderRadius.swift */,
-				BA09D06928A4B85F00E698D6 /* LoginVc.swift */,
-				BA0BBA3828A55C8F0065F799 /* AddPhotoCell.swift */,
-				BA0BBA3A28A56C550065F799 /* categsVc.swift */,
-				BA0BBA3C28A56C9C0065F799 /* categsNamesCell.swift */,
-				BA45235928AC9FA800CFAA25 /* Products.swift */,
-				BA6B676928ACA66800BEB012 /* FilterNamesCell.swift */,
-				BA6B676B28ACB26100BEB012 /* ProductCell.swift */,
 			);
 			path = adam.ai;
 			sourceTree = "<group>";
