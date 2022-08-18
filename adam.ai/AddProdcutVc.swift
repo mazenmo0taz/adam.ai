@@ -21,7 +21,7 @@ class AddProdcutVc: UIViewController {
     @IBOutlet weak var textField5: UITextField!
     @IBOutlet weak var doneBtn: UIButton!
     var productsArr:[Prodcuts] = []
-    var imgsDataArr:[Data] = []
+    var imgsDataArr:[NSData] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor.clear
@@ -77,7 +77,7 @@ extension AddProdcutVc: UICollectionViewDelegate,UICollectionViewDataSource,UICo
         
         if(indexPath.row < imgsDataArr.count){
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell" , for: indexPath) as! ProductImgCell
-            cell.productImg.image = UIImage(data: imgsDataArr[indexPath.row])
+            cell.productImg.image = UIImage(data: imgsDataArr[indexPath.row] as Data)
             cell.productImg.roundCorners([.allCorners], radius: 10)
             cell.dltBtn.roundCorners([.allCorners], radius: 12.5)
             return cell
@@ -118,8 +118,8 @@ extension AddProdcutVc: PHPickerViewControllerDelegate {
             res.itemProvider.loadObject(ofClass: UIImage.self, completionHandler:{
                 (image,error) in
                 if let img = image as? UIImage{
+                    self.imgsDataArr.append(img.jpegData(compressionQuality: 0.5)! as NSData)
                     DispatchQueue.main.async {
-                        self.imgsDataArr.append(img.pngData()!)
                         self.collectionView.reloadData()
                     }
                 }

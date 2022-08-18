@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 class Prodcuts:Object{
-    @objc var image : Data = Data()
+    @objc dynamic var image : NSData = NSData()
     @objc dynamic var name : String?
     @objc dynamic var price : String?
 }

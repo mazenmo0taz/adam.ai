@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ozv-TD-OOB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -537,17 +537,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="191" height="245"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-ci-HLy">
-                                                    <rect key="frame" x="6" y="6" width="179" height="156"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-ci-HLy">
+                                                    <rect key="frame" x="12" y="12" width="167" height="150"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-kD-BVD">
-                                                    <rect key="frame" x="6" y="179" width="53.666666666666657" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-kD-BVD">
+                                                    <rect key="frame" x="11.999999999999996" y="179" width="53.666666666666657" height="25.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1Y-ZT-I3P">
-                                                    <rect key="frame" x="6" y="208.33333333333334" width="46" height="23"/>
+                                                    <rect key="frame" x="12" y="208.33333333333334" width="46" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -557,9 +557,9 @@
                                                 <constraint firstItem="i1Y-ZT-I3P" firstAttribute="leading" secondItem="1fr-kD-BVD" secondAttribute="leading" id="9PK-wA-NPg"/>
                                                 <constraint firstItem="1fr-kD-BVD" firstAttribute="top" secondItem="WzX-ci-HLy" secondAttribute="bottom" constant="17" id="Ohv-wA-MtA"/>
                                                 <constraint firstAttribute="bottom" secondItem="WzX-ci-HLy" secondAttribute="bottom" constant="83" id="Q27-IU-t1e"/>
-                                                <constraint firstItem="WzX-ci-HLy" firstAttribute="top" secondItem="QMR-cJ-M5t" secondAttribute="top" constant="6" id="fw9-OT-a1n"/>
-                                                <constraint firstItem="WzX-ci-HLy" firstAttribute="leading" secondItem="QMR-cJ-M5t" secondAttribute="leading" constant="6" id="p0n-Aw-RI9"/>
-                                                <constraint firstAttribute="trailing" secondItem="WzX-ci-HLy" secondAttribute="trailing" constant="6" id="v3w-Dw-eLu"/>
+                                                <constraint firstItem="WzX-ci-HLy" firstAttribute="top" secondItem="QMR-cJ-M5t" secondAttribute="top" constant="12" id="fw9-OT-a1n"/>
+                                                <constraint firstItem="WzX-ci-HLy" firstAttribute="leading" secondItem="QMR-cJ-M5t" secondAttribute="leading" constant="12" id="p0n-Aw-RI9"/>
+                                                <constraint firstAttribute="trailing" secondItem="WzX-ci-HLy" secondAttribute="trailing" constant="12" id="v3w-Dw-eLu"/>
                                                 <constraint firstItem="i1Y-ZT-I3P" firstAttribute="top" secondItem="1fr-kD-BVD" secondAttribute="bottom" constant="4" id="xjP-RI-wlE"/>
                                                 <constraint firstItem="1fr-kD-BVD" firstAttribute="leading" secondItem="WzX-ci-HLy" secondAttribute="leading" id="z2N-yl-y3g"/>
                                             </constraints>

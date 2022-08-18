@@ -67,13 +67,14 @@ extension categsVc:UICollectionViewDelegate,UICollectionViewDataSource,UICollect
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell2", for: indexPath) as! ProductCell
-            cell.productImg.image = UIImage(data: productsArr[indexPath.row].image,scale: 1)
+            let imgData = productsArr[indexPath.row].image as Data
+            cell.productImg.image = UIImage(data: imgData)
+            
             cell.productName.text = productsArr[indexPath.row].name
             cell.productPrice.text = productsArr[indexPath.row].price
             cell.productImg.roundCorners([.allCorners], radius: 20)
             cell.roundCorners([.allCorners], radius: 20)
             cell.backgroundColor = UIColor.white
-            cell.productImg.backgroundColor = UIColor.black
             return cell
         }
         
